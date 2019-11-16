@@ -73,7 +73,7 @@ class App extends Component {
 
 	onImageSubmit = () => {
 		this.setState({ imageUrl: this.state.input });
-		fetch('http://localhost:3000/imageurl', {
+		fetch('https://immense-forest-86541.herokuapp.com/imageurl', {
 			method: 'post',
 			headers: { 'content-type': 'application/json' },
 			body: JSON.stringify({ input: this.state.input })
@@ -81,7 +81,7 @@ class App extends Component {
 			.then((response) => response.json())
 			.then((response) => {
 				if (response) {
-					fetch('http://localhost:3000/image', {
+					fetch('https://immense-forest-86541.herokuapp.com/image', {
 						method: 'put',
 						headers: { 'content-type': 'application/json' },
 						body: JSON.stringify({ id: this.state.user.id })
